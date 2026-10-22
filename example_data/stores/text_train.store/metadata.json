@@ -1,0 +1,15 @@
+{
+  "storage": "text_evidence_store",
+  "source_store": "../../data/benchmarks/v2_textsplit_strict/text/train_text50_strict.store",
+  "num_sets": 10,
+  "num_genes": 10,
+  "num_contexts": 1,
+  "total_evidence": 40,
+  "min_evidence": 4,
+  "median_evidence": 4.0,
+  "max_evidence": 4,
+  "vector_dim": 768,
+  "vector_dtype": "float32",
+  "review_example_subset": true,
+  "synthetic": false
+}

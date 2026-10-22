@@ -1,0 +1,15 @@
+﻿dataset: strict_text_min8
+evaluation: paired_all_genes
+ablations:
+  - full_scgates
+  - without_cell_side_denoising
+  - without_text_side_denoising
+  - without_cell_and_text_denoising
+  - without_stage1_instance_score
+metrics:
+  - recall_at_1
+  - recall_at_5
+  - recall_at_10
+  - mrr
+
+

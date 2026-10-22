@@ -1,0 +1,41 @@
+Gene	TextID	Sentence
+APOE	APOE|10629359|2	Apolipoprotein E ([GENE]) sigma4 allele is a risk factor for late-onset Alzheimer's disease (AD) and is proposed to have an impact on cholinergic function in AD.
+APOE	APOE|10668711|3	It has been reported that the A2M gene (A2M) exon 18 splice acceptor deletion polymorphism influences the development of AD, regardless of apolipoprotein E-epsilon4 (APOE-epsilon4) status.
+APOE	APOE|10818513|4	Our results demonstrate that [GENE] epsilon 4 allele, a known risk factor for dementia, indeed influences the extent of Alzheimer's lesions seen in the brain tissue of demented patients and asymptomatic controls.
+APOE	APOE|10818534|6	Recent reports sustain the hypothesis of tight links between vascular and neurodegenerative diseases: associations between atherosclerosis lesions and Alzheimer's disease (AD), increased risk of AD for hypertensive subjects, decreased risk of dementia for elderly treated with hypotensive drugs, and a major impact of apolipoprotein E polymorphism, a protein of the lipid metabolism, on the occurrence of AD.
+APP	APP|10670705|0	PS mutations lead to the same functional consequence as mutations on amyloid precursor protein ([GENE]), altering the processing of [GENE] towards the release of the more amyloidogenic form 1-42 of Abeta (Abeta42).
+APP	APP|10682224|1	In some familial AD, mutations in amyloid precursor protein and presenilins are associated with the risk of early onset of this disease; however, their mechanisms of action are not fully understood.
+APP	APP|10785464|2	To address this question, we studied the neuropathological consequences of TBI in transgenic (TG) mice with a mutant human Abeta precursor protein ([GENE]) mini-gene driven by a platelet-derived (PD) growth factor promoter resulting in overexpression of mutant [GENE] (V717F), elevated brain Abeta levels, and AD-like amyloidosis.
+APP	APP|10860781|4	The three proteins identified to have mutations in their corresponding genes leading to presenile Alzheimer dementia (AD)-the amyloid precursor protein ([GENE]) and presenilin 1 and 2-all interact with other proteins.
+TREM2	TREM2|18567623|5	If phagocytosis is compromised as it is evident in loss-of-function mutations of either [GENE] or DAP12, this results in a chronic degenerative CNS disease.
+TREM2	TREM2|23150908|8	Variant of [GENE] associated with the risk of Alzheimer's disease.
+TREM2	TREM2|23150908|10	CONCLUSIONS: Our findings strongly implicate variant [GENE] in the pathogenesis of Alzheimer's disease.
+TREM2	TREM2|23150934|11	[GENE] Variants in Alzheimer's Disease Homozygous loss-of-function mutations in [GENE], encoding the triggering receptor expressed on myeloid cells 2 protein, have previously been associated with an autosomal recessive form of early-onset dementia.
+MAPT	MAPT|10643798|0	A polymorphism in the tau gene associated with risk for Alzheimer's disease.
+MAPT	MAPT|10899436|5	Tau mutations in frontotemporal dementia FTDP-17 and their relevance for Alzheimer's disease.
+MAPT	MAPT|10899436|6	Several missense mutations also have a stimulatory effect on heparin-induced tau filament formation.
+MAPT	MAPT|10983715|10	Intronic mutations and some coding region mutations produce increased splicing in of exon 10, resulting in an overexpression of four-repeat tau isoforms.
+PSEN1	PSEN1|10655540|2	Our data suggest that the increased risk for EOAD associated with [GENE] may result from genetic variations in the regulatory region leading to altered expression levels of the [GENE] protein.
+PSEN1	PSEN1|10671322|3	Mutations in presenilin 1 (PS1) are the most common causes of familial Alzheimer's disease (FAD).
+PSEN1	PSEN1|10775535|6	Alzheimer's disease due to an intronic presenilin-1 ([GENE] intron 4) mutation: A clinicopathological study.
+PSEN1	PSEN1|10775535|7	We describe 21 affected individuals from a kindred with early-onset autosomal dominant familial Alzheimer's disease caused by an intronic presenilin-1 mutation (in intron 4).
+ABCA7	ABCA7|21460840|0	Common variants at [GENE], MS4A6A/MS4A4E, EPHA1, CD33 and CD2AP are associated with Alzheimer's disease.
+ABCA7	ABCA7|21460840|2	However, in a preliminary attempt to identify an associated functional variant at the [GENE] locus, we genotyped the GERAD2 sample for rs3752246, a non-synonymous SNP in exon 32 of the gene, which showed the highest LD with rs3764650 out of all HapMap [GENE] coding variants based on r2 (r2=0.36, D'=0.89).
+ABCA7	ABCA7|21903584|3	Variants in a number of phagocytosis-related genes promote AD, including ApoE, ApoJ (clusterin), [GENE], and CR1.
+ABCA7	ABCA7|23226438|5	The minor allele of rs3764650 in [GENE] is associated with age at onset and disease duration, and the minor allele of rs670139 in MS4A6E was associated with Braak tangle and Braak plaque score.
+BIN1	BIN1|21390209|0	Meta-analysis for genome-wide association study identifies multiple variants at the [GENE] locus associated with late-onset Alzheimer's disease.
+BIN1	BIN1|21390209|1	Recent GWAS studies focused on uncovering novel genetic loci related to AD have revealed associations with variants near CLU, CR1, PICALM and [GENE].
+BIN1	BIN1|21347408|2	Fine mapping of genetic variants in [GENE], CLU, CR1 and PICALM for association with cerebrospinal fluid biomarkers for Alzheimer's disease.
+BIN1	BIN1|21347408|3	Association analyses were performed to determine whether variants in [GENE], CLU, CR1 or PICALM are associated with changes in the CSF levels of these biomarkers.
+CLU	CLU|19734903|0	Genome-wide association study identifies variants at [GENE] and CR1 associated with Alzheimer's disease.
+CLU	CLU|19782124|1	It will be also of interest to examine whether recently discovered polymorphisms within the clusterin encoding gene [GENE] and the clathrin protein related PICALM gene are associated with microvascular changes in AD.
+CLU	CLU|19651157|3	An alternative splicing can produce a variant isoform of clusterin which can be translocated to nuclei where it induces apoptosis.
+CLU	CLU|19734902|4	Genome-wide association study identifies variants at [GENE] and PICALM associated with Alzheimer's disease.
+PICALM	PICALM|19782124|0	It will be also of interest to examine whether recently discovered polymorphisms within the clusterin encoding gene CLU and the clathrin protein related [GENE] gene are associated with microvascular changes in AD.
+PICALM	PICALM|20044221|1	Of the single nucleotide polymorphisms (SNPs) associated with AD risk, three promising candidates include a variant of CLU, encoding clusterin, on chromosome 8; a variant of CR1, encoding the complement component (3b/4b) receptor 1, on chromosome 1; and variants near a gene encoding the [GENE] protein; [see Bertram & Tanzi for a review of other topical genes including ACE, GAB2, MAPT, and SORL1].
+PICALM	PICALM|19734902|3	Genome-wide association study identifies variants at CLU and [GENE] associated with Alzheimer's disease, and shows evidence for additional susceptibility genes We undertook a two-stage genome-wide association study of Alzheimer's disease involving over 16,000 individuals.
+PICALM	PICALM|20570404|4	Association of CLU and [GENE] variants with Alzheimer's disease.
+SORL1	SORL1|16957580|0	We hypothesize that LR11 loss may be specific to sporadic AD and influence amyloid pathology through mechanisms independent of substrate-enzyme interactions regulated by FAD mutations.
+SORL1	SORL1|17220890|2	We report here that inherited variants in the [GENE] neuronal sorting receptor are associated with late-onset Alzheimer disease.
+SORL1	SORL1|17420311|4	The association between genetic variants in [GENE] and Alzheimer disease in an urban, multiethnic, community-based cohort.
+SORL1	SORL1|17420311|6	CONCLUSIONS: This study confirms the association between genetic variants in [GENE] and AD.

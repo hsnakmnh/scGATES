@@ -1,0 +1,44 @@
+﻿cell_embeddings_jsonl: "<PROJECT_ROOT>/data/cell_embeddings.train_donor.jsonl"
+gene_neighbor_path: "<PROJECT_ROOT>/data/gene_neighbors.json"
+gene_allowlist_jsonl: "<PROJECT_ROOT>/data/ad_alterome_text_sapbert.jsonl"
+
+context_fields: "condition,context"
+context_template: ""
+context_filter: "Dementia|Non-neuronal and Non-neural"
+
+sample_ratio: 1.0
+max_cells: 0
+max_genes_per_cell: 512
+min_pairs_per_cell: 4
+min_neighbors_per_gene: 2
+max_neighbors_per_gene: 10
+
+train_ratio: 0.8
+batch_size: 1
+num_workers: 0
+
+hidden_dim: 512
+proj_dim: 256
+nhead: 4
+num_layers: 1
+dropout: 0.1
+
+init_lr: 0.0003
+weight_decay: 0.05
+warmup_steps: 200
+temperature: 0.07
+max_epochs: 50
+
+seed: 42
+filename: "geneformer-neighbor-align"
+output_dir: "<PROJECT_ROOT>/outputs"
+precision: "32"
+accelerator: "auto"
+devices: 1
+gradient_clip_val: 1.0
+patience: 10
+
+output_prior_npz: "<PROJECT_ROOT>/data/geneformer_neighbor_prior.stage1.npz"
+prior_min_observations: 1
+
+

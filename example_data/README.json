@@ -1,0 +1,25 @@
+{
+  "description": "Small real-data subset for scGATES review-package smoke testing.",
+  "genes": [
+    "APOE",
+    "APP",
+    "TREM2",
+    "MAPT",
+    "PSEN1",
+    "ABCA7",
+    "BIN1",
+    "CLU",
+    "PICALM",
+    "SORL1"
+  ],
+  "context": "Dementia|Non-neuronal and Non-neural",
+  "max_instances_per_gene": 16,
+  "max_evidence_per_gene": 4,
+  "synthetic": false,
+  "source_stores": {
+    "train_distribution": "../../data/gene_distributions.train_donor.stage1.store",
+    "eval_distribution": "../../data/gene_distributions.eval_donor.stage1.store",
+    "train_text": "../../data/benchmarks/v2_textsplit_strict/text/train_text50_strict.store",
+    "eval_text": "../../data/benchmarks/v2_textsplit_strict/text/eval_text50_strict.store"
+  }
+}

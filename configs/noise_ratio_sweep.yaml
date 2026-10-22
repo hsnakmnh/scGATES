@@ -1,0 +1,19 @@
+﻿dataset: strict_text_min8
+evaluation: paired_all_genes
+text_noise_targets:
+  - 0.10
+  - 0.20
+  - 0.30
+  - 0.40
+  - 0.50
+  - 0.60
+cell_noise_targets:
+  - 0.10
+  - 0.20
+  - 0.30
+  - 0.40
+  - 0.50
+  - 0.60
+ratio_formula: noise_over_clean = target_noise_fraction / (1 - target_noise_fraction)
+
+

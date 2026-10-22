@@ -1,0 +1,11 @@
+{
+  "storage": "gene_distribution_store",
+  "source_store": "../../data/gene_distributions.eval_donor.stage1.store",
+  "num_distributions": 10,
+  "num_genes": 10,
+  "num_contexts": 1,
+  "total_instances": 160,
+  "vector_dim": 768,
+  "review_example_subset": true,
+  "synthetic": false
+}

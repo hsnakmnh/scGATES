@@ -1,0 +1,10 @@
+﻿dataset: strict_text_min8
+evaluation: paired_all_genes
+variants:
+  - gene_masked
+  - gene_unmasked
+  - gene_to_entrezid
+  - gene_to_random_alias
+purpose: test whether gene identifiers create lexical shortcuts in text evidence.
+
+
