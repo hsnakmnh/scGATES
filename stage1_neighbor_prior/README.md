@@ -1,104 +1,48 @@
-﻿# Geneformer Neighbor Alignment
+# Geneformer Neighbor Prior
 
-This package is the Step-1 pretraining module for the current scGATES pipeline.
-It is Geneformer-native: it reads the JSONL produced by
-`scripts/export_geneformer_embeddings.py` and trains a contrastive model between:
+This optional module trains a contrastive model between a target gene embedding and the embeddings of its neighboring genes within a cell. It exports one normalized prior vector per gene.
 
-- target gene contextual Geneformer embedding in one cell;
-- the set of contextual Geneformer embeddings of that gene's neighbor genes in
-  the same cell.
+## Dependencies and Inputs
 
-The reusable output for Stage1 is:
-
-```text
-data/geneformer_neighbor_prior.stage1.npz
-```
-
-The prior contains one normalized vector per gene and can later be loaded by
-Stage1 as a frozen auxiliary prior.
-
-## Expected Neighbor File
-
-The neighbor file can be JSON:
-
-```json
-{
-  "GENE1": ["A", "B", "C"],
-  "GENE2": ["D", "E"]
-}
-```
-
-or a Stage1 neighbor CSV with at least:
-
-```text
-query_gene,neighbor_gene,rank
-```
-
-Gene matching is case-insensitive against this file, while exported gene names
-preserve the spelling from `cell_embeddings.jsonl`.
-
-## Train And Export Prior
-
-Recommended remote pattern:
+Install the core dependencies from the repository root, then the module-specific packages:
 
 ```bash
-cd <PROJECT_ROOT>
-WANDB_DISABLED=true python -m stage1_neighbor_prior.train \
-  --cell_embeddings_jsonl <PROJECT_ROOT>/data/cell_embeddings.train_donor.jsonl \
-  --gene_neighbor_path <PROJECT_ROOT>/data/neighbors.train_donor.stage1.csv \
-  --gene_allowlist_jsonl <PROJECT_ROOT>/data/ad_alterome_text_sapbert.jsonl \
-  --context_fields "condition,context" \
-  --context_filter "Dementia|Non-neuronal and Non-neural" \
-  --output_dir <PROJECT_ROOT>/outputs \
-  --filename GF_neighbor_prior_main \
-  --output_prior_npz <PROJECT_ROOT>/data/geneformer_neighbor_prior.stage1.npz \
-  --max_cells 3000 \
-  --max_genes_per_cell 512 \
-  --min_pairs_per_cell 4 \
-  --min_neighbors_per_gene 2 \
-  --max_neighbors_per_gene 10 \
-  --max_epochs 20
+python -m pip install -r requirements.txt
+python -m pip install pytorch-lightning PyYAML
 ```
 
-The trainer writes:
+Provide externally prepared cell embedding JSONL and a neighbor map. Cell embedding extraction is upstream of this module. The JSONL record format is read by `GeneformerNeighborDataset` in [data.py](data.py).
 
-```text
-outputs/GF_neighbor_prior_main/
-  resolved_config.json
-  training_manifest.json
-  final.ckpt
-  checkpoints/
-  logs/
+Neighbor maps can be JSON objects such as `{"GENE1": ["A", "B"]}`, or CSV files with `query_gene`, `neighbor_gene`, and `rank` columns. Use training-donor cell embeddings when preparing a prior for donor-split evaluation.
+
+## Train and Export
+
+Copy [config.example.yaml](config.example.yaml) to `stage1_neighbor_prior/config.local.yaml`, replace the `<PROJECT_ROOT>` placeholders, and set the paths to your inputs. The `gene_allowlist_jsonl` input is optional and can be set to an empty string.
+
+Run from the repository root:
+
+```bash
+python -m stage1_neighbor_prior.train --config stage1_neighbor_prior/config.local.yaml
 ```
 
-## Export From A Checkpoint
+The YAML values override matching command-line values. Keep `batch_size: 1`, as required by this trainer. The configured `output_prior_npz` path controls the exported vector file; checkpoints, logs, and the resolved configuration are written under `<output_dir>/<filename>/`.
 
-If the prior was not exported during training:
+To export again from a checkpoint (Bash):
 
 ```bash
 python -m stage1_neighbor_prior.export_prior \
-  --checkpoint <PROJECT_ROOT>/outputs/GF_neighbor_prior_main/final.ckpt \
-  --cell-embeddings-jsonl <PROJECT_ROOT>/data/cell_embeddings.train_donor.jsonl \
-  --gene-neighbor-path <PROJECT_ROOT>/data/neighbors.train_donor.stage1.csv \
-  --gene-allowlist-jsonl <PROJECT_ROOT>/data/ad_alterome_text_sapbert.jsonl \
-  --context-fields "condition,context" \
-  --context-filter "Dementia|Non-neuronal and Non-neural" \
-  --output-npz <PROJECT_ROOT>/data/geneformer_neighbor_prior.stage1.npz
+  --checkpoint outputs/geneformer-neighbor-align/final.ckpt \
+  --cell-embeddings-jsonl data/cell_embeddings.train_donor.jsonl \
+  --gene-neighbor-path data/gene_neighbors.json \
+  --context-fields condition,context \
+  --context-filter 'Dementia|Non-neuronal and Non-neural' \
+  --output-npz data/geneformer_neighbor_prior.stage1.npz
 ```
 
-The exporter also writes:
+Adjust those paths and filtering options to match the configuration used for training. The export creates an NPZ with `genes`, `vectors`, `counts`, and `metadata_json`, plus a `.npz.metadata.json` sidecar.
 
-```text
-data/geneformer_neighbor_prior.stage1.npz.metadata.json
-```
+## Use in the Alignment Trainer
 
-## Notes
+Load the exported vectors through `--gene-neighbor-prior-npz` and enable the desired prior loss or fusion option. Inspect `python scripts/training/run_scgates_alignment.py --help` for those options.
 
-- Batch size is fixed to `1` because each item is one cell with a variable
-  number of target gene-neighbor pairs.
-- This module no longer reads `.h5ad` directly and does not use a separate
-  character text encoder for neighbor names.
-- Use only train-donor `cell_embeddings.jsonl` to train/export priors for
-  donor-split experiments, otherwise the prior can leak eval donor information.
-
-
+The `--instance-score-npz` and `--eval-instance-score-npz` inputs instead require per-instance scores with `keys`, `offsets`, and `scores`. See [the input contracts](../DATA_MANIFEST.md#auxiliary-input-formats) for their format. This module's vector export cannot be used as an instance-score file.

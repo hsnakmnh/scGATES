@@ -16,3 +16,6 @@ Thumbs.db
 /expected_tables/
 /example_outputs/
 /supplementary/
+
+# Local upstream-prior configuration
+/stage1_neighbor_prior/config.local.yaml

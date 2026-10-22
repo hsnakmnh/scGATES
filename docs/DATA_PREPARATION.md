@@ -2,7 +2,7 @@
 
 ## Purpose
 
-These notes retain the dataset sources and preprocessing procedures from the original supplementary preparation materials.
+Dataset sources and preprocessing stages for preparing full-experiment inputs.
 
 ## Data Sources
 
@@ -48,7 +48,7 @@ These notes retain the dataset sources and preprocessing procedures from the ori
 3. Select genes with sufficient text evidence.
 4. Cap evidence per gene to reduce imbalance across genes.
 5. Mask explicit mentions of the target gene with `[GENE]`.
-6. Encode evidence sentences with PubMedBERT using mean pooling.
+6. Encode evidence sentences with the configured transformer and pooling method. The packaged variant recipe uses a local S-PubMedBert-MS-MARCO model and mean pooling; set `--model-name-or-path` to the matching model weights.
 7. Export encoded evidence into text evidence stores.
 8. Split text evidence into train and eval stores with a balanced split.
 
