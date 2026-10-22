@@ -1,4 +1,4 @@
-﻿# Method Summary
+# Method Summary
 
 scGATES represents each gene with two sets:
 
@@ -20,11 +20,3 @@ The model learns a shared retrieval space and evaluates whether the matched \(D_
 4. Prior-gated text denoising through `prior_sigmoid`.
 5. Cell-side denoising through the cell set encoder.
 6. Stage1 instance-score guidance as an auxiliary cell-side signal.
-
-## Main Claims Supported By Current Results
-
-- Full scGATES outperforms mean pooling under noisy text evidence.
-- Text-side denoising is the most important ablation factor.
-- Cell-side denoising and Stage1 instance scores provide smaller auxiliary effects.
-- Unmasked gene names produce much higher retrieval scores, so masked text is used as the conservative main setting.
-

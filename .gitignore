@@ -7,3 +7,12 @@ venv/
 .env.*
 .DS_Store
 Thumbs.db
+
+# Generated run artifacts and archived result bundles
+/results/
+/outputs/
+/logs/
+/tables/
+/expected_tables/
+/example_outputs/
+/supplementary/

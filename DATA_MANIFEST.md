@@ -1,4 +1,4 @@
-﻿# Data Manifest
+# Data Manifest
 
 All paths are project-relative. Large data files are not included in this review package.
 
@@ -21,15 +21,11 @@ All paths are project-relative. Large data files are not included in this review
 
 ## Mini Example Data
 
-Synthetic smoke-test data can be generated locally inside the review package:
+A small real-data subset is already included in `example_data/`. It contains cell-side distribution stores, text evidence stores, Stage1 instance-score inputs, and text previews for checking input formats and the training interface.
 
-```bash
-python scripts/data_preprocessing/make_mini_review_example.py --output-dir example_data
-```
+The subset provenance is recorded in `example_data/README.json` and each store's `metadata.json`. The `synthetic` field is `false`.
 
-This creates small distribution stores, text evidence stores, and Stage1
-instance-score files under `example_data/`. These files are only for validating
-input/output formats.
+See [the example data guide](example_data/README.md) and the small input command in [README.md](README.md). Full-data preparation is described in [the data preparation notes](docs/DATA_PREPARATION.md).
 
 ## Stage1 Upstream Module
 
@@ -47,4 +43,3 @@ It reads precomputed `.npz` files through:
 --instance-score-npz
 --eval-instance-score-npz
 ```
-

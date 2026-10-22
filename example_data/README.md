@@ -1,23 +1,18 @@
-# Mini Review Example Data
+# Small Input Data Example
 
-This directory is intentionally small. The bundled text preview is real
-AD-Alterome evidence. The runnable mini stores are generated from the real
-project stores by:
+This directory contains a small real-data subset for checking scGATES input formats and the training interface. The bundled text previews contain AD-Alterome evidence; the stores contain sampled cell distributions, text embeddings, and Stage1 instance-score inputs.
 
-```bash
-bash run_scripts/99_run_mini_example.sh
-```
+The provenance and subset limits are recorded in `README.json` and each store's `metadata.json`. These records mark the subset with `synthetic: false`.
 
-The generated mini stores sample real cell distributions, real text evidence,
-and real Stage1 instance-score files from the project data. They are only for
-validating file formats and execution, not for paper claims.
-
-Expected generated structure:
+## Included Inputs
 
 ```text
 example_data/
+  README.json
   text/
     real_ad_alterome_sample.tsv
+    mini_ad_alterome.train.tsv
+    mini_ad_alterome.eval.tsv
   stores/
     gene_distributions.train.store/
     gene_distributions.eval.store/
@@ -26,3 +21,5 @@ example_data/
     stage1_instance_scores.train.npz
     stage1_instance_scores.eval.npz
 ```
+
+The stores are already prepared. See [the small input command](../README.md#11-small-input-example) to pass them to the training script. Prepare full datasets using [DATA_MANIFEST.md](../DATA_MANIFEST.md) and [the data preparation notes](../docs/DATA_PREPARATION.md).
